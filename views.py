@@ -3,6 +3,6 @@ def index():
         return template.read()
 
 
-def blog():
-    with open('templates/blog.html') as template:
+def not_found():
+    with open('templates/not_found.html') as template:
         return template.read()
