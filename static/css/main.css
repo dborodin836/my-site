@@ -1,0 +1,46 @@
+body{
+    margin: 2em;
+    padding: 1em;
+    font-family: "Roboto Light", Arial, sans-serif;
+    background-color: #614ad3;
+}
+
+.center{
+    text-align: center;
+    font-weight: bolder;
+    position: absolute;
+    left: 25%;
+    right: 25%;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.left{
+    position: sticky;
+    left: auto;
+}
+
+.white{
+    color: white;
+}
+
+.red{
+    color: #e42c64;
+}
+
+.big{
+    font-size: xxx-large;
+}
+
+.not_that_big{
+    font-size: xx-large;
+}
+.text-border{
+    te
+}
