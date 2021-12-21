@@ -17,12 +17,15 @@ def parse_request(request):
 
 def generate_headers(method, url):
     if not method == 'GET':
-        return 'HTTP/1.1 405 Method not allowed\n\n', 405
+        return 'HTTP/1.1 405 Method not allowed\r\n', 405
 
-    if url not in URLS and not url.startswith('/static/'):
-        return 'HTTP/1.1 404 Method not found\n\n', 404
+    if url not in URLS:
+        return 'HTTP/1.1 404 Not found\r\n', 404
 
-    return 'HTTP/1.1 200 OK\n\n', 200
+    if url not in URLS and '/static/' in url:
+        return 'HTTP/1.1 200 OK\r\n', 200
+
+    return 'HTTP/1.1 200 OK\r\n', 200
 
 
 def generate_content(code, url):
@@ -51,7 +54,7 @@ def run_server():
     server_socket.listen()
 
     while True:
-        client_socket, addr = server_socket.accept()
+        client_socket, client_addr = server_socket.accept()
         request = client_socket.recv(1024)
 
         print(request)
